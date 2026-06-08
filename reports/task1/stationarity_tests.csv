@@ -1,0 +1,37 @@
+industry,transformation,adf_pvalue,kpss_pvalue,adf_stationary_5pct,kpss_stationary_5pct
+Construction,level,0.39679071343306366,0.01,False,False
+Construction,diff_1,1.1393951129923941e-13,0.1,True,True
+Construction,diff_12,1.6276719263571276e-07,0.1,True,True
+Construction,diff_1_12,5.468443223152058e-10,0.1,True,True
+Education and Health Services,level,0.790514701429599,0.01,False,False
+Education and Health Services,diff_1,2.9671720640897655e-16,0.1,True,True
+Education and Health Services,diff_12,4.854578780575401e-09,0.1,True,True
+Education and Health Services,diff_1_12,2.2729050949506847e-13,0.1,True,True
+Financial Activities,level,0.13752691470894868,0.05965340626594032,False,True
+Financial Activities,diff_1,5.472225960748596e-09,0.1,True,True
+Financial Activities,diff_12,0.0015224438064921912,0.1,True,True
+Financial Activities,diff_1_12,2.793751288517777e-10,0.1,True,True
+Government,level,0.015523042754607204,0.07815300224601607,True,True
+Government,diff_1,3.87301998787354e-09,0.1,True,True
+Government,diff_12,1.0232578274081913e-06,0.1,True,True
+Government,diff_1_12,4.79293849744763e-13,0.1,True,True
+Information,level,0.002633943891105763,0.03747365634625142,True,False
+Information,diff_1,5.704807305553004e-11,0.1,True,True
+Information,diff_12,1.4874813933857401e-05,0.09360610473636564,True,True
+Information,diff_1_12,3.387445580212376e-10,0.1,True,True
+Leisure and Hospitality,level,0.09347970232476743,0.01,False,False
+Leisure and Hospitality,diff_1,6.683967949549097e-18,0.1,True,True
+Leisure and Hospitality,diff_12,6.923350988826156e-08,0.1,True,True
+Leisure and Hospitality,diff_1_12,8.397420211131393e-11,0.1,True,True
+Manufacturing,level,0.1795874729907524,0.019917407566649704,False,False
+Manufacturing,diff_1,3.1230676017351284e-11,0.1,True,True
+Manufacturing,diff_12,0.07271895918451421,0.1,False,True
+Manufacturing,diff_1_12,4.2174729313710714e-14,0.1,True,True
+Professional and Business Services,level,0.3811675868491533,0.01,False,False
+Professional and Business Services,diff_1,7.290093578949867e-08,0.1,True,True
+Professional and Business Services,diff_12,0.003421926661254291,0.1,True,True
+Professional and Business Services,diff_1_12,3.395004373275735e-10,0.1,True,True
+"Trade, Transportation, and Utilities",level,0.33374092427241464,0.022223871669851573,False,False
+"Trade, Transportation, and Utilities",diff_1,9.794654426564122e-10,0.1,True,True
+"Trade, Transportation, and Utilities",diff_12,0.008056804121998773,0.1,True,True
+"Trade, Transportation, and Utilities",diff_1_12,9.942274129355859e-12,0.1,True,True

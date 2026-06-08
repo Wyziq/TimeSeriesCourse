@@ -1,0 +1,10 @@
+industry,train_observations,train_end,test_observations,test_start,test_end
+Construction,299,2025-10-01,6,2025-11-01,2026-04-01
+Education and Health Services,299,2025-10-01,6,2025-11-01,2026-04-01
+Financial Activities,299,2025-10-01,6,2025-11-01,2026-04-01
+Government,299,2025-10-01,6,2025-11-01,2026-04-01
+Information,299,2025-10-01,6,2025-11-01,2026-04-01
+Leisure and Hospitality,299,2025-10-01,6,2025-11-01,2026-04-01
+Manufacturing,299,2025-10-01,6,2025-11-01,2026-04-01
+Professional and Business Services,299,2025-10-01,6,2025-11-01,2026-04-01
+"Trade, Transportation, and Utilities",299,2025-10-01,6,2025-11-01,2026-04-01

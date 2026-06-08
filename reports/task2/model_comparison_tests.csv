@@ -1,0 +1,10 @@
+test,model_a,model_b,statistic,pvalue,pvalue_holm,significant_5pct
+Friedman,all,all,49.70449282075044,4.65741833399159e-08,4.65741833399159e-08,True
+Wilcoxon_abs_error,Theta,SeasonalNaive,254.0,0.11018292605876923,0.4407317042350769,False
+Wilcoxon_abs_error,Theta,Naive,38.0,9.602808859199286e-08,7.682247087359428e-07,True
+Wilcoxon_abs_error,Theta,ARIMA_manual,316.0,0.39894458651542664,0.7978891730308533,False
+Wilcoxon_abs_error,Theta,AutoARIMA,268.0,0.15746410191059113,0.47239232063293457,False
+Wilcoxon_abs_error,Theta,ETS_manual,218.0,0.03587699681520462,0.21526198089122772,False
+Wilcoxon_abs_error,Theta,AutoETS,242.0,0.07840798795223236,0.392039954662323,False
+Wilcoxon_abs_error,Theta,AutoTheta,330.5,0.4843347668647766,0.7978891730308533,False
+Wilcoxon_abs_error,Theta,Prophet_manual,147.0,0.0013919275952503085,0.00974349316675216,True

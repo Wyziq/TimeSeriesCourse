@@ -1,0 +1,16 @@
+pandas>=2.0
+numpy>=1.26
+matplotlib>=3.8
+seaborn>=0.13
+scipy>=1.12
+statsmodels>=0.14
+statsforecast>=2.0
+utilsforecast>=0.2
+prophet>=1.1
+mlforecast>=1.0
+neuralforecast>=3.1
+scikit-learn>=1.7
+lightgbm>=4.6
+nbformat>=5.10
+nbconvert>=7.16
+ipykernel>=6.29

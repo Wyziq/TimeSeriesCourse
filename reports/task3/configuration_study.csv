@@ -1,0 +1,5 @@
+family,configuration,validation_mase
+DL,MLP_input_12,0.7490035704138388
+DL,MLP_input_24,0.7514493412544666
+ML,LightGBM_basic_lags,1.2490353939274443
+ML,LightGBM_full_features,1.2614159270110492

@@ -1,0 +1,11 @@
+test,passed,details
+input_schema_and_frequency,True,"{""n_series"": 9, ""n_rows"": 2745, ""min_date"": ""2000-12-01"", ""max_date"": ""2026-04-01"", ""min_series_length"": 305, ""max_series_length"": 305}"
+forecast_shape,True,"rows=54, expected=54"
+interval_order,True,lo95 <= lo80 <= point <= hi80 <= hi95
+duplicate_rejection,True,A duplicated time-series key must raise ValueError
+monthly_gap_rejection,True,A missing month must raise ValueError
+theta_mase_below_one,True,Theta MASE=0.719
+theta_beats_seasonal_baseline,True,"Theta=0.719, SeasonalNaive=0.772"
+theta_best_aggregate_model,True,"best=Theta, NHITS=0.757"
+baseline_difference_is_nonsignificant,True,Wilcoxon Holm-adjusted p=0.441; Theta practical gain is reported as not statistically significant
+pipeline_runtime_under_30_seconds,True,total_seconds=0.843

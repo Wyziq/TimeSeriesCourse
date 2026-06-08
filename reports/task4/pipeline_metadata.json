@@ -1,0 +1,26 @@
+{
+  "generated_at_utc": "2026-06-08T16:30:01.239688+00:00",
+  "data_path": "/Users/vova/Library/Mobile Documents/iCloud~md~obsidian/Documents/Wyziq/Netology & URFU/2 семестр/08 Анализ временных рядов/ДЗ/data/processed/total_separations_nf.csv",
+  "data_sha256": "841b9514a20eaa3ab043f4cb79c38c69829387c64eb19fc48b973c761019fc0d",
+  "frequency": "MS",
+  "horizon": 6,
+  "selected_model": "Theta",
+  "baseline_model": "SeasonalNaive",
+  "prediction_intervals": [
+    80,
+    95
+  ],
+  "validation": {
+    "n_series": 9,
+    "n_rows": 2745,
+    "min_date": "2000-12-01",
+    "max_date": "2026-04-01",
+    "min_series_length": 305,
+    "max_series_length": 305
+  },
+  "timing_seconds": {
+    "load_and_validation": 0.09498215299390722,
+    "forecast_and_validation": 0.42240362500888295,
+    "total": 0.5327299810014665
+  }
+}

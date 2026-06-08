@@ -1,0 +1,10 @@
+industry,observations,start,end,missing_job_openings,missing_hires,missing_total_separations,missing_quits,missing_layoffs_discharges
+Construction,305,2000-12-01,2026-04-01,0,0,0,0,0
+Education and Health Services,305,2000-12-01,2026-04-01,0,0,0,0,0
+Financial Activities,305,2000-12-01,2026-04-01,0,0,0,0,0
+Government,305,2000-12-01,2026-04-01,0,0,0,0,0
+Information,305,2000-12-01,2026-04-01,0,0,0,0,0
+Leisure and Hospitality,305,2000-12-01,2026-04-01,0,0,0,0,0
+Manufacturing,305,2000-12-01,2026-04-01,0,0,0,0,0
+Professional and Business Services,305,2000-12-01,2026-04-01,0,0,0,0,0
+"Trade, Transportation, and Utilities",305,2000-12-01,2026-04-01,0,0,0,0,0

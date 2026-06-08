@@ -1,0 +1,321 @@
+{
+  "downloaded_at_utc": "2026-06-07T20:20:53.459713+00:00",
+  "source": "https://fred.stlouisfed.org/",
+  "series": [
+    {
+      "industry": "Construction",
+      "measure": "job_openings",
+      "fred_id": "JTU2300JOL",
+      "file": "data/raw/JTU2300JOL.csv",
+      "sha256": "50b6dacefece65b300ae208a72db95c767cefe9fa90b19d3114886b8b1713cb2"
+    },
+    {
+      "industry": "Construction",
+      "measure": "hires",
+      "fred_id": "JTU2300HIL",
+      "file": "data/raw/JTU2300HIL.csv",
+      "sha256": "e9d7599d4d18197b7233f724a3aad3271a8ffbdae8d57fa7fca53c1d6ac20022"
+    },
+    {
+      "industry": "Construction",
+      "measure": "total_separations",
+      "fred_id": "JTU2300TSL",
+      "file": "data/raw/JTU2300TSL.csv",
+      "sha256": "70848acca49c4750b004653f1a112ed1c695b7354546695d2460aa0616f3f62e"
+    },
+    {
+      "industry": "Construction",
+      "measure": "quits",
+      "fred_id": "JTU2300QUL",
+      "file": "data/raw/JTU2300QUL.csv",
+      "sha256": "fa506eb3452b69842eb9b3530815965a56f14590d8886cf1c88b446a20f5a6b9"
+    },
+    {
+      "industry": "Construction",
+      "measure": "layoffs_discharges",
+      "fred_id": "JTU2300LDL",
+      "file": "data/raw/JTU2300LDL.csv",
+      "sha256": "ac077213eb59646bef144e93eae1d0da843a4221793e8786b2c089a107ac2abb"
+    },
+    {
+      "industry": "Manufacturing",
+      "measure": "job_openings",
+      "fred_id": "JTU3000JOL",
+      "file": "data/raw/JTU3000JOL.csv",
+      "sha256": "e154d434d1279b6589502ce8337bd79885c9eaa1b378b436282d2b7fbc729b3e"
+    },
+    {
+      "industry": "Manufacturing",
+      "measure": "hires",
+      "fred_id": "JTU3000HIL",
+      "file": "data/raw/JTU3000HIL.csv",
+      "sha256": "a3be5b456a97318d535b97dd4c01a504a444fa2f23a1f894980daeb8982f6e5c"
+    },
+    {
+      "industry": "Manufacturing",
+      "measure": "total_separations",
+      "fred_id": "JTU3000TSL",
+      "file": "data/raw/JTU3000TSL.csv",
+      "sha256": "202f6e3e9b21280af3098cd3000852a71aee0eceb76b0609a9a2f4610c6ded33"
+    },
+    {
+      "industry": "Manufacturing",
+      "measure": "quits",
+      "fred_id": "JTU3000QUL",
+      "file": "data/raw/JTU3000QUL.csv",
+      "sha256": "779a12b6f58418b6ffc1a86efa71b6ba3a95dfbc0280289a48acb874041cbce6"
+    },
+    {
+      "industry": "Manufacturing",
+      "measure": "layoffs_discharges",
+      "fred_id": "JTU3000LDL",
+      "file": "data/raw/JTU3000LDL.csv",
+      "sha256": "03d6ecf033721b8b995c1ed9755e6e5445dba5b2a40b8805aaff8cf13e9f8975"
+    },
+    {
+      "industry": "Trade, Transportation, and Utilities",
+      "measure": "job_openings",
+      "fred_id": "JTU4000JOL",
+      "file": "data/raw/JTU4000JOL.csv",
+      "sha256": "e47799604374fdf78d225245cb697402058b0de4a1a595499c2978af03a3e890"
+    },
+    {
+      "industry": "Trade, Transportation, and Utilities",
+      "measure": "hires",
+      "fred_id": "JTU4000HIL",
+      "file": "data/raw/JTU4000HIL.csv",
+      "sha256": "8d3255f2aadc4a62abbe4da1ee3307c9efa577a3ccd7f959c9370db556d14ed1"
+    },
+    {
+      "industry": "Trade, Transportation, and Utilities",
+      "measure": "total_separations",
+      "fred_id": "JTU4000TSL",
+      "file": "data/raw/JTU4000TSL.csv",
+      "sha256": "e03e9d7bf9cae127b75aa84d8577375037124640c7dabf483fb180e23e9919ab"
+    },
+    {
+      "industry": "Trade, Transportation, and Utilities",
+      "measure": "quits",
+      "fred_id": "JTU4000QUL",
+      "file": "data/raw/JTU4000QUL.csv",
+      "sha256": "b6b2a629e9296ca8436a8ecaa614a2ae79f67410b285e8f4f26f335f3a21700f"
+    },
+    {
+      "industry": "Trade, Transportation, and Utilities",
+      "measure": "layoffs_discharges",
+      "fred_id": "JTU4000LDL",
+      "file": "data/raw/JTU4000LDL.csv",
+      "sha256": "543d77f11153df8b87ce3c98452e3885f090282f56c8c538d1988ac59516b7c0"
+    },
+    {
+      "industry": "Information",
+      "measure": "job_openings",
+      "fred_id": "JTU5100JOL",
+      "file": "data/raw/JTU5100JOL.csv",
+      "sha256": "bc261d127e62d797e695551ca40acb6e5516f918c4efccbd78f2fd3e4ddc6474"
+    },
+    {
+      "industry": "Information",
+      "measure": "hires",
+      "fred_id": "JTU5100HIL",
+      "file": "data/raw/JTU5100HIL.csv",
+      "sha256": "567cea5ef1354f8bf3aad7c5b05da2ab850f278d48d51cf53c39191b604344eb"
+    },
+    {
+      "industry": "Information",
+      "measure": "total_separations",
+      "fred_id": "JTU5100TSL",
+      "file": "data/raw/JTU5100TSL.csv",
+      "sha256": "e2217398a7b818bf247ecb743b8e6466570496ab7ca9562824c45fc3f375e3e1"
+    },
+    {
+      "industry": "Information",
+      "measure": "quits",
+      "fred_id": "JTU5100QUL",
+      "file": "data/raw/JTU5100QUL.csv",
+      "sha256": "f9d4a4de8273d9811e0f60c50a2ca5bc85c5e3b65d1f3173e14860b91a76cfa3"
+    },
+    {
+      "industry": "Information",
+      "measure": "layoffs_discharges",
+      "fred_id": "JTU5100LDL",
+      "file": "data/raw/JTU5100LDL.csv",
+      "sha256": "4477c2feab6189d5b84fa25493deb60c4bf96a902a9a8278c7d41e07e27cdc63"
+    },
+    {
+      "industry": "Financial Activities",
+      "measure": "job_openings",
+      "fred_id": "JTU510099JOL",
+      "file": "data/raw/JTU510099JOL.csv",
+      "sha256": "3dce98336760d2a459e059016811047b0cea3daeff87d5fc073ab79860260310"
+    },
+    {
+      "industry": "Financial Activities",
+      "measure": "hires",
+      "fred_id": "JTU510099HIL",
+      "file": "data/raw/JTU510099HIL.csv",
+      "sha256": "bf9a8b4da7b76c610c69d530a0ff4166d99187ded8445f53e6e2018dcb36a353"
+    },
+    {
+      "industry": "Financial Activities",
+      "measure": "total_separations",
+      "fred_id": "JTU510099TSL",
+      "file": "data/raw/JTU510099TSL.csv",
+      "sha256": "f676fcd81a9e86191d0e42260ca956b0649cf268b1d1af9120516b69ee50c7a0"
+    },
+    {
+      "industry": "Financial Activities",
+      "measure": "quits",
+      "fred_id": "JTU510099QUL",
+      "file": "data/raw/JTU510099QUL.csv",
+      "sha256": "4001f4b60831231e7f7a41043afc01d5e2ac34df7d9761cec81af4beb1dcf585"
+    },
+    {
+      "industry": "Financial Activities",
+      "measure": "layoffs_discharges",
+      "fred_id": "JTU510099LDL",
+      "file": "data/raw/JTU510099LDL.csv",
+      "sha256": "c582cea7b5f9759797004900fe536e8deab6637d3567eb41bd49ec23239ad3a4"
+    },
+    {
+      "industry": "Professional and Business Services",
+      "measure": "job_openings",
+      "fred_id": "JTU540099JOL",
+      "file": "data/raw/JTU540099JOL.csv",
+      "sha256": "0eb9c1e5be7cd96d0c6b5a6ef535b2338ae4fece393608b9a2fac404f54e98aa"
+    },
+    {
+      "industry": "Professional and Business Services",
+      "measure": "hires",
+      "fred_id": "JTU540099HIL",
+      "file": "data/raw/JTU540099HIL.csv",
+      "sha256": "8733a3e6c638ecc3121e35a9babd8f803d2311958aab0df10cdc83536196f885"
+    },
+    {
+      "industry": "Professional and Business Services",
+      "measure": "total_separations",
+      "fred_id": "JTU540099TSL",
+      "file": "data/raw/JTU540099TSL.csv",
+      "sha256": "525cc122e26c0ba2d8fed0f571c4d0ff3f70ba72f8d7729229db005cb75f6755"
+    },
+    {
+      "industry": "Professional and Business Services",
+      "measure": "quits",
+      "fred_id": "JTU540099UL",
+      "file": "data/raw/JTU540099UL.csv",
+      "sha256": "9c29e0621fc0a21577415d306bd32ef24b2c4b2c6c162c06621db803b1116778"
+    },
+    {
+      "industry": "Professional and Business Services",
+      "measure": "layoffs_discharges",
+      "fred_id": "JTU540099LDL",
+      "file": "data/raw/JTU540099LDL.csv",
+      "sha256": "87d3bf11852410665b418e977075b6b2bdebdef0caed5d55ebdd873f5d12dac5"
+    },
+    {
+      "industry": "Education and Health Services",
+      "measure": "job_openings",
+      "fred_id": "JTU6000JOL",
+      "file": "data/raw/JTU6000JOL.csv",
+      "sha256": "74c9f0bfd6d1cdc9d9c2e0c6205c98336d9025268716ff61166cc58ce9dbbd6e"
+    },
+    {
+      "industry": "Education and Health Services",
+      "measure": "hires",
+      "fred_id": "JTU6000HIL",
+      "file": "data/raw/JTU6000HIL.csv",
+      "sha256": "3ca8005af4716b6531e91e1910b590a210889c52a7069340d0ba28443d353a70"
+    },
+    {
+      "industry": "Education and Health Services",
+      "measure": "total_separations",
+      "fred_id": "JTU6000TSL",
+      "file": "data/raw/JTU6000TSL.csv",
+      "sha256": "153fb1419408b82d78a58a4539d157ac79f17247dc5a93c56f2c4363d67dda26"
+    },
+    {
+      "industry": "Education and Health Services",
+      "measure": "quits",
+      "fred_id": "JTU6000QUL",
+      "file": "data/raw/JTU6000QUL.csv",
+      "sha256": "e983ddba38cacdceddbc4e5842dbec0128eca3e727045693f022a4781ce87e77"
+    },
+    {
+      "industry": "Education and Health Services",
+      "measure": "layoffs_discharges",
+      "fred_id": "JTU6000LDL",
+      "file": "data/raw/JTU6000LDL.csv",
+      "sha256": "d1587754c78325f9904bef7d35f438a4d26019fb1760a52677d480fa080fe49b"
+    },
+    {
+      "industry": "Leisure and Hospitality",
+      "measure": "job_openings",
+      "fred_id": "JTU7000JOL",
+      "file": "data/raw/JTU7000JOL.csv",
+      "sha256": "8beaab86a3e6bb40deaca0f66725834f5f1a8a515463e8dace798ec71197b222"
+    },
+    {
+      "industry": "Leisure and Hospitality",
+      "measure": "hires",
+      "fred_id": "JTU7000HIL",
+      "file": "data/raw/JTU7000HIL.csv",
+      "sha256": "cad4b102d55b314b6e3cb75d4465da4f90deb18f2d6591f26f3fb746f645e37e"
+    },
+    {
+      "industry": "Leisure and Hospitality",
+      "measure": "total_separations",
+      "fred_id": "JTU7000TSL",
+      "file": "data/raw/JTU7000TSL.csv",
+      "sha256": "fd75469a634a8ae8074722b2912ed8bf272c3960d304369ac6d1312685ab9e1d"
+    },
+    {
+      "industry": "Leisure and Hospitality",
+      "measure": "quits",
+      "fred_id": "JTU7000QUL",
+      "file": "data/raw/JTU7000QUL.csv",
+      "sha256": "55d267452ab3481a3686f8fb3a91fb418256390db3564e4eee757b3acfb50261"
+    },
+    {
+      "industry": "Leisure and Hospitality",
+      "measure": "layoffs_discharges",
+      "fred_id": "JTU7000LDL",
+      "file": "data/raw/JTU7000LDL.csv",
+      "sha256": "630b427a1faa4818a68e1a3db117bcfca5989feba1d0cfeebe03847ed9cab523"
+    },
+    {
+      "industry": "Government",
+      "measure": "job_openings",
+      "fred_id": "JTU9000JOL",
+      "file": "data/raw/JTU9000JOL.csv",
+      "sha256": "f6bad9ff77cb85d1b8427b51b1538417734f48de268649ab2e6adb1c15b1b0fe"
+    },
+    {
+      "industry": "Government",
+      "measure": "hires",
+      "fred_id": "JTU9000HIL",
+      "file": "data/raw/JTU9000HIL.csv",
+      "sha256": "64960ca8bca3ebe833839aede5331dd99af5b3c353d9dd55bdc47b19b81a4a2d"
+    },
+    {
+      "industry": "Government",
+      "measure": "total_separations",
+      "fred_id": "JTU9000TSL",
+      "file": "data/raw/JTU9000TSL.csv",
+      "sha256": "f0d28392391d01f1283b05479d96419d43d97dfbde4a0f5a065619facfc0c65f"
+    },
+    {
+      "industry": "Government",
+      "measure": "quits",
+      "fred_id": "JTU9000QUL",
+      "file": "data/raw/JTU9000QUL.csv",
+      "sha256": "f5f895bf9405feebea4d7bdf7de25a125e179b392347f49b61d621c5f244b531"
+    },
+    {
+      "industry": "Government",
+      "measure": "layoffs_discharges",
+      "fred_id": "JTU9000LDL",
+      "file": "data/raw/JTU9000LDL.csv",
+      "sha256": "86b4cf951166d555088cf036231c727a0d0d6998b07f28a02fcffb7ae0b25fe4"
+    }
+  ]
+}

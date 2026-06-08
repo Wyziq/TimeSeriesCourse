@@ -1,0 +1,11 @@
+.DS_Store
+.venv/
+.jupyter/
+.ipython/
+.numba_cache/
+__pycache__/
+*.py[cod]
+.mplconfig/
+agents/runs/
+agents/tmp/
+*.agent.log
