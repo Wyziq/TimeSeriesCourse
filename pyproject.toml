@@ -1,0 +1,18 @@
+[project]
+name = "timeseriescourse"
+version = "0.1.0"
+description = "Time series forecasting ML project"
+authors = [
+    {name = "Vladimir Slutskiy",email = "wyziq@me.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+
+dependencies = ["numpy (>=1.26,<3)", "pandas (>=2.2,<3)", "statsforecast (>=2,<3)"]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+package-mode = false
