@@ -21,7 +21,6 @@ from scripts.forecast_pipeline import (
     validate_panel,
 )
 
-
 REPORTS_DIR = ROOT / "reports" / "task4"
 FIGURES_DIR = ROOT / "figures" / "task4"
 TASK2_DIR = ROOT / "reports" / "task2"
@@ -125,9 +124,7 @@ def statistical_tests() -> tuple[list[dict], pd.DataFrame]:
         & task2_tests["test"].eq("Wilcoxon_abs_error")
     ]
     if len(baseline_tests) != 1:
-        raise ValueError(
-            "Expected exactly one Theta vs SeasonalNaive Wilcoxon test"
-        )
+        raise ValueError("Expected exactly one Theta vs SeasonalNaive Wilcoxon test")
     baseline_test = baseline_tests.iloc[0]
     baseline_reported_correctly = (
         pd.notna(baseline_test["pvalue_holm"])
@@ -144,18 +141,12 @@ def statistical_tests() -> tuple[list[dict], pd.DataFrame]:
         test_row(
             "theta_beats_seasonal_baseline",
             theta["mase"] < baseline["mase"],
-            (
-                f"Theta={theta['mase']:.3f}, "
-                f"SeasonalNaive={baseline['mase']:.3f}"
-            ),
+            (f"Theta={theta['mase']:.3f}, SeasonalNaive={baseline['mase']:.3f}"),
         ),
         test_row(
             "theta_best_aggregate_model",
             comparison.iloc[0]["model"] == "Theta",
-            (
-                f"best={comparison.iloc[0]['model']}, "
-                f"NHITS={nhits['mase']:.3f}"
-            ),
+            (f"best={comparison.iloc[0]['model']}, NHITS={nhits['mase']:.3f}"),
         ),
         test_row(
             "baseline_difference_is_nonsignificant",
@@ -179,9 +170,7 @@ def save_figure(data: pd.DataFrame, forecast: pd.DataFrame) -> None:
         history = data[data["unique_id"].eq(unique_id)].tail(36)
         future = forecast[forecast["unique_id"].eq(unique_id)]
         axis.plot(history["ds"], history["y"], color="black", label="History")
-        axis.plot(
-            future["ds"], future["y_hat"], color="tab:blue", label="Theta"
-        )
+        axis.plot(future["ds"], future["y_hat"], color="tab:blue", label="Theta")
         axis.fill_between(
             future["ds"],
             future["lo_95"],
@@ -339,9 +328,7 @@ def run_task4() -> dict:
         )
     ]
     test_results = pd.DataFrame(functional + statistical + performance)
-    test_results.to_csv(
-        REPORTS_DIR / "pipeline_test_results.csv", index=False
-    )
+    test_results.to_csv(REPORTS_DIR / "pipeline_test_results.csv", index=False)
     comparison.to_csv(REPORTS_DIR / "all_model_comparison.csv", index=False)
     pd.DataFrame(
         [

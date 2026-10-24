@@ -1,5 +1,5 @@
-import unittest
 import tempfile
+import unittest
 from pathlib import Path
 
 import numpy as np
@@ -26,9 +26,7 @@ class ForecastPipelineTests(unittest.TestCase):
         self.assertEqual(result["min_series_length"], 305)
 
     def test_duplicate_is_rejected(self) -> None:
-        invalid = pd.concat(
-            [self.data, self.data.iloc[[0]]], ignore_index=True
-        )
+        invalid = pd.concat([self.data, self.data.iloc[[0]]], ignore_index=True)
         with self.assertRaises(ValueError):
             validate_panel(invalid)
 

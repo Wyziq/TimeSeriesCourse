@@ -1,6 +1,6 @@
 import os
-from pathlib import Path
 import warnings
+from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 os.environ.setdefault("MPLCONFIGDIR", str(ROOT / ".mplconfig"))
@@ -11,7 +11,6 @@ import pandas as pd
 import seaborn as sns
 from statsmodels.tsa.seasonal import STL
 from statsmodels.tsa.stattools import adfuller, kpss
-
 
 DATA_PATH = ROOT / "data" / "processed" / "jolts_industry_panel.csv"
 REPORTS_DIR = ROOT / "reports" / "task1"
@@ -188,11 +187,7 @@ def save_figures(data: pd.DataFrame, profile: pd.DataFrame) -> None:
     plt.close(fig)
 
     representative = "Professional and Business Services"
-    y = (
-        data[data["industry"].eq(representative)]
-        .set_index("ds")[TARGET]
-        .asfreq("MS")
-    )
+    y = data[data["industry"].eq(representative)].set_index("ds")[TARGET].asfreq("MS")
     decomposition = STL(y, period=12, robust=True).fit()
     fig = decomposition.plot()
     fig.set_size_inches(14, 10)
@@ -240,9 +235,7 @@ def save_report(
     strongest_seasonality = stl.nlargest(3, "seasonal_strength")[
         ["industry", "seasonal_strength"]
     ]
-    strongest_trend = stl.nlargest(3, "trend_strength")[
-        ["industry", "trend_strength"]
-    ]
+    strongest_trend = stl.nlargest(3, "trend_strength")[["industry", "trend_strength"]]
     dtype_md = "\n".join(
         [
             "| column | dtype |",

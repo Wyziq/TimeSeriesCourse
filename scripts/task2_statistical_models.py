@@ -1,7 +1,7 @@
-import os
-from pathlib import Path
-import warnings
 import logging
+import os
+import warnings
+from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 os.environ.setdefault("MPLCONFIGDIR", str(ROOT / ".mplconfig"))
@@ -11,8 +11,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import seaborn as sns
-from scipy.stats import friedmanchisquare, shapiro, wilcoxon
 from prophet import Prophet
+from scipy.stats import friedmanchisquare, shapiro, wilcoxon
 from statsforecast import StatsForecast
 from statsforecast.models import (
     ARIMA,
@@ -24,7 +24,6 @@ from statsforecast.models import (
     Theta,
 )
 from statsmodels.stats.diagnostic import acorr_ljungbox
-
 
 DATA_PATH = ROOT / "data" / "processed" / "total_separations_nf.csv"
 REPORTS_DIR = ROOT / "reports" / "task2"
@@ -134,15 +133,15 @@ def add_prophet_cross_validation(
     data: pd.DataFrame,
 ) -> pd.DataFrame:
     rows = []
-    for unique_id, cutoff in cv[
-        ["unique_id", "cutoff"]
-    ].drop_duplicates().itertuples(index=False, name=None):
-        train = data[
-            data["unique_id"].eq(unique_id) & data["ds"].le(cutoff)
-        ][["ds", "y"]]
-        dates = cv[
-            cv["unique_id"].eq(unique_id) & cv["cutoff"].eq(cutoff)
-        ]["ds"].sort_values()
+    for unique_id, cutoff in (
+        cv[["unique_id", "cutoff"]].drop_duplicates().itertuples(index=False, name=None)
+    ):
+        train = data[data["unique_id"].eq(unique_id) & data["ds"].le(cutoff)][
+            ["ds", "y"]
+        ]
+        dates = cv[cv["unique_id"].eq(unique_id) & cv["cutoff"].eq(cutoff)][
+            "ds"
+        ].sort_values()
         prediction = prophet_predictions(train, dates)
         prediction.insert(0, "cutoff", cutoff)
         prediction.insert(0, "unique_id", unique_id)
@@ -161,9 +160,9 @@ def seasonal_scale(
     unique_id: str,
     cutoff: pd.Timestamp,
 ) -> float:
-    train = data[
-        data["unique_id"].eq(unique_id) & data["ds"].le(cutoff)
-    ]["y"].astype(float)
+    train = data[data["unique_id"].eq(unique_id) & data["ds"].le(cutoff)]["y"].astype(
+        float
+    )
     scale = train.diff(SEASON_LENGTH).abs().dropna().mean()
     return float(scale)
 
@@ -178,9 +177,9 @@ def add_scales(cv: pd.DataFrame, data: pd.DataFrame) -> pd.DataFrame:
     result = cv.copy()
     result["mase_scale"] = [
         scales[(unique_id, cutoff)]
-        for unique_id, cutoff in result[
-            ["unique_id", "cutoff"]
-        ].itertuples(index=False, name=None)
+        for unique_id, cutoff in result[["unique_id", "cutoff"]].itertuples(
+            index=False, name=None
+        )
     ]
     return result
 
@@ -223,9 +222,7 @@ def metric_row(group: pd.DataFrame, model: str) -> dict:
             (group["y"] >= group[f"{model}-lo-95"])
             & (group["y"] <= group[f"{model}-hi-95"])
         ),
-        "mean_width_95": np.mean(
-            group[f"{model}-hi-95"] - group[f"{model}-lo-95"]
-        ),
+        "mean_width_95": np.mean(group[f"{model}-hi-95"] - group[f"{model}-lo-95"]),
         "interval_score_95": np.mean(
             interval_score(
                 group["y"],
@@ -265,9 +262,7 @@ def model_metrics(
             )
 
     aggregate = pd.DataFrame(rows).sort_values(["mase", "smape"])
-    by_industry = pd.DataFrame(industry_rows).sort_values(
-        ["unique_id", "mase"]
-    )
+    by_industry = pd.DataFrame(industry_rows).sort_values(["unique_id", "mase"])
     by_horizon = pd.DataFrame(horizon_rows).sort_values(["horizon", "mase"])
     return aggregate, by_industry, by_horizon
 
@@ -383,9 +378,7 @@ def comparison_tests(
         )
         for model in MODEL_NAMES
     }
-    friedman = friedmanchisquare(
-        *[absolute_errors[model] for model in MODEL_NAMES]
-    )
+    friedman = friedmanchisquare(*[absolute_errors[model] for model in MODEL_NAMES])
     best_model = aggregate_metrics.iloc[0]["model"]
 
     rows = [
@@ -546,9 +539,7 @@ def save_figures(
     fig, axes = plt.subplots(3, 3, figsize=(18, 13))
     for unique_id, axis in zip(industries, axes.flat):
         history = data[data["unique_id"].eq(unique_id)].tail(36)
-        forecast = final_predictions[
-            final_predictions["unique_id"].eq(unique_id)
-        ]
+        forecast = final_predictions[final_predictions["unique_id"].eq(unique_id)]
         axis.plot(history["ds"], history["y"], color="black", label="Actual")
         axis.plot(
             forecast["ds"],
@@ -596,20 +587,15 @@ def save_report(
 ) -> None:
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
     best = aggregate_metrics.iloc[0]
-    baseline = aggregate_metrics[
-        aggregate_metrics["model"].eq("SeasonalNaive")
-    ].iloc[0]
+    baseline = aggregate_metrics[aggregate_metrics["model"].eq("SeasonalNaive")].iloc[0]
     improvement = 100.0 * (baseline["mase"] - best["mase"]) / baseline["mase"]
     diagnostics_best = diagnostics[diagnostics["model"].eq(best["model"])]
     white_noise_share = diagnostics_best["white_noise_5pct"].mean()
-    fitted_best = fitted_diagnostics[
-        fitted_diagnostics["model"].eq(best["model"])
-    ]
+    fitted_best = fitted_diagnostics[fitted_diagnostics["model"].eq(best["model"])]
     fitted_white_noise_share = fitted_best["white_noise_5pct"].mean()
     friedman_pvalue = tests[tests["test"].eq("Friedman")]["pvalue"].iloc[0]
     baseline_test = tests[
-        tests["model_b"].eq("SeasonalNaive")
-        & tests["test"].eq("Wilcoxon_abs_error")
+        tests["model_b"].eq("SeasonalNaive") & tests["test"].eq("Wilcoxon_abs_error")
     ].iloc[0]
     industry_winners = (
         industry_metrics.sort_values(["unique_id", "mase"])

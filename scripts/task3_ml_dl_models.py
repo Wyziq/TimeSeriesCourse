@@ -1,7 +1,6 @@
 import os
-from pathlib import Path
 import time
-import warnings
+from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 os.environ.setdefault("MPLCONFIGDIR", str(ROOT / ".mplconfig"))
@@ -24,7 +23,6 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.linear_model import Ridge
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
-
 
 DATA_PATH = ROOT / "data" / "processed" / "total_separations_nf.csv"
 TASK2_CV_PATH = ROOT / "reports" / "task2" / "cross_validation_predictions.csv"
@@ -257,12 +255,10 @@ def normalize_dl_columns(cv: pd.DataFrame) -> pd.DataFrame:
 
 def seasonal_scales(data: pd.DataFrame, cv: pd.DataFrame) -> pd.DataFrame:
     rows = []
-    for unique_id, cutoff in cv[
-        ["unique_id", "cutoff"]
-    ].drop_duplicates().itertuples(index=False, name=None):
-        train = data[
-            data["unique_id"].eq(unique_id) & data["ds"].le(cutoff)
-        ]["y"]
+    for unique_id, cutoff in (
+        cv[["unique_id", "cutoff"]].drop_duplicates().itertuples(index=False, name=None)
+    ):
+        train = data[data["unique_id"].eq(unique_id) & data["ds"].le(cutoff)]["y"]
         rows.append(
             {
                 "unique_id": unique_id,
@@ -395,9 +391,7 @@ def validation_split(data: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
     valid_start = cutoff + pd.offsets.MonthBegin()
     valid_end = cutoff + pd.DateOffset(months=HORIZON)
     train = data[data["ds"].le(cutoff)].copy()
-    valid = data[
-        data["ds"].ge(valid_start) & data["ds"].le(valid_end)
-    ].copy()
+    valid = data[data["ds"].ge(valid_start) & data["ds"].le(valid_end)].copy()
     return train, valid
 
 
@@ -553,9 +547,7 @@ def comparison_tests(cv: pd.DataFrame) -> pd.DataFrame:
             .mean()
             .to_numpy()
         )
-    friedman = friedmanchisquare(
-        *[block_errors[model] for model in models]
-    )
+    friedman = friedmanchisquare(*[block_errors[model] for model in models])
     best_model = min(
         MODEL_NAMES,
         key=lambda model: np.mean(block_errors[model]),
@@ -718,19 +710,14 @@ def save_report(
         .first()[["unique_id", "model"]]
     )
     winner_summary = "; ".join(
-        f"{row.unique_id}: {row.model}"
-        for row in winners.itertuples(index=False)
+        f"{row.unique_id}: {row.model}" for row in winners.itertuples(index=False)
     )
-    friedman_pvalue = tests.loc[
-        tests["test"].eq("Friedman_block_MASE"), "pvalue"
-    ].iloc[0]
-    theta_test = tests.loc[
-        tests["test"].eq("Wilcoxon_block_MASE"), "pvalue"
+    friedman_pvalue = tests.loc[tests["test"].eq("Friedman_block_MASE"), "pvalue"].iloc[
+        0
     ]
+    theta_test = tests.loc[tests["test"].eq("Wilcoxon_block_MASE"), "pvalue"]
     theta_pvalue = theta_test.iloc[0]
-    tested_model = tests.loc[
-        tests["test"].eq("Wilcoxon_block_MASE"), "model_a"
-    ].iloc[0]
+    tested_model = tests.loc[tests["test"].eq("Wilcoxon_block_MASE"), "model_a"].iloc[0]
     report = f"""# Задача №3: ML и DL для временных рядов
 
 ## Дизайн

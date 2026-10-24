@@ -3,7 +3,6 @@ from textwrap import dedent
 
 import nbformat as nbf
 
-
 ROOT = Path(__file__).resolve().parents[1]
 NOTEBOOK_PATH = ROOT / "notebooks" / "03_task3_ml_dl_models.ipynb"
 

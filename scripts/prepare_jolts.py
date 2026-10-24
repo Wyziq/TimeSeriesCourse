@@ -2,14 +2,13 @@ import argparse
 import hashlib
 import json
 import time
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from functools import reduce
 from pathlib import Path
 from urllib.error import URLError
 from urllib.request import Request, urlopen
 
 import pandas as pd
-
 
 ROOT = Path(__file__).resolve().parents[1]
 RAW_DIR = ROOT / "data" / "raw"
@@ -104,8 +103,7 @@ def read_series(fred_id: str, column_name: str) -> pd.DataFrame:
 
 def build_industry_dataset(industry: str, industry_code: str) -> pd.DataFrame:
     frames = [
-        read_series(series_id(industry_code, measure), measure)
-        for measure in MEASURES
+        read_series(series_id(industry_code, measure), measure) for measure in MEASURES
     ]
     data = reduce(
         lambda left, right: left.merge(right, on="ds", how="outer"),
@@ -212,7 +210,7 @@ def save_manifest() -> None:
     MANIFEST_PATH.write_text(
         json.dumps(
             {
-                "downloaded_at_utc": datetime.now(timezone.utc).isoformat(),
+                "downloaded_at_utc": datetime.now(UTC).isoformat(),
                 "source": "https://fred.stlouisfed.org/",
                 "series": series,
             },

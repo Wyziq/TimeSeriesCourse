@@ -2,14 +2,13 @@ import argparse
 import hashlib
 import json
 import time
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
 from statsforecast import StatsForecast
 from statsforecast.models import SeasonalNaive, Theta
-
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_DATA_PATH = ROOT / "data" / "processed" / "total_separations_nf.csv"
@@ -39,9 +38,7 @@ def load_panel(path: Path | str = DEFAULT_DATA_PATH) -> pd.DataFrame:
 def validate_panel(data: pd.DataFrame) -> dict:
     missing_columns = REQUIRED_COLUMNS.difference(data.columns)
     if missing_columns:
-        raise ValueError(
-            f"Missing required columns: {sorted(missing_columns)}"
-        )
+        raise ValueError(f"Missing required columns: {sorted(missing_columns)}")
 
     if data[list(REQUIRED_COLUMNS)].isna().any().any():
         raise ValueError("Required columns contain missing values")
@@ -65,13 +62,11 @@ def validate_panel(data: pd.DataFrame) -> dict:
         actual = pd.DatetimeIndex(group["ds"].sort_values())
         expected = pd.date_range(actual.min(), actual.max(), freq=FREQUENCY)
         if not actual.equals(expected):
-            raise ValueError(
-                f"Series {unique_id!r} is not a continuous monthly series"
-            )
+            raise ValueError(f"Series {unique_id!r} is not a continuous monthly series")
 
     return {
         "n_series": int(data["unique_id"].nunique()),
-        "n_rows": int(len(data)),
+        "n_rows": len(data),
         "min_date": data["ds"].min().date().isoformat(),
         "max_date": data["ds"].max().date().isoformat(),
         "min_series_length": int(lengths.min()),
@@ -126,9 +121,7 @@ def validate_forecast(
 ) -> None:
     expected_rows = history["unique_id"].nunique() * horizon
     if len(forecast) != expected_rows:
-        raise ValueError(
-            f"Expected {expected_rows} forecasts, got {len(forecast)}"
-        )
+        raise ValueError(f"Expected {expected_rows} forecasts, got {len(forecast)}")
     if forecast.duplicated(["unique_id", "ds"]).any():
         raise ValueError("Forecast contains duplicate keys")
 
@@ -159,9 +152,7 @@ def validate_forecast(
             periods=horizon,
             freq=FREQUENCY,
         )
-        if not pd.DatetimeIndex(group["ds"].sort_values()).equals(
-            expected_dates
-        ):
+        if not pd.DatetimeIndex(group["ds"].sort_values()).equals(expected_dates):
             raise ValueError(f"Invalid forecast dates for {unique_id!r}")
 
 
@@ -190,7 +181,7 @@ def run_pipeline(
     forecast.to_csv(forecast_path, index=False)
 
     metadata = {
-        "generated_at_utc": datetime.now(timezone.utc).isoformat(),
+        "generated_at_utc": datetime.now(UTC).isoformat(),
         "data_path": str(data_path),
         "data_sha256": file_sha256(data_path),
         "frequency": FREQUENCY,
